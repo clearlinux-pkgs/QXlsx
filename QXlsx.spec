@@ -5,7 +5,7 @@
 #
 Name     : QXlsx
 Version  : 1.4.6
-Release  : 1
+Release  : 2
 URL      : https://github.com/QtExcel/QXlsx/archive/v1.4.6/QXlsx-1.4.6.tar.gz
 Source0  : https://github.com/QtExcel/QXlsx/archive/v1.4.6/QXlsx-1.4.6.tar.gz
 Summary  : No detailed summary available
@@ -18,6 +18,7 @@ BuildRequires : buildreq-kde
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
+Patch1: 0001-Add-Qt-version-to-make-cmake-config-match-actual-ins.patch
 
 %description
 # QXlsx
@@ -54,13 +55,14 @@ license components for the QXlsx package.
 %prep
 %setup -q -n QXlsx-1.4.6
 cd %{_builddir}/QXlsx-1.4.6
+%patch -P 1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1689725942
+export SOURCE_DATE_EPOCH=1689805116
 pushd QXlsx
 mkdir -p clr-build
 pushd clr-build
@@ -78,7 +80,7 @@ popd
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1689725942
+export SOURCE_DATE_EPOCH=1689805116
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/QXlsx
 cp %{_builddir}/QXlsx-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/QXlsx/0fc052f0f02f09fd3d64d63ab5deed0ebcbb0ba7 || :

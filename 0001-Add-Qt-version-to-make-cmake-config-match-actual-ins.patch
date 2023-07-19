@@ -1,0 +1,26 @@
+From be95a3da04590c50bd55301d35106f4f6192016b Mon Sep 17 00:00:00 2001
+From: "Brett T. Warden" <brett.t.warden@intel.com>
+Date: Wed, 19 Jul 2023 15:16:42 -0700
+Subject: [PATCH] Add Qt version to make cmake config match actual installed
+ include path
+
+---
+ QXlsx/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/QXlsx/CMakeLists.txt b/QXlsx/CMakeLists.txt
+index 4fa7f7f1e5b3..074922a822b0 100644
+--- a/QXlsx/CMakeLists.txt
++++ b/QXlsx/CMakeLists.txt
+@@ -179,7 +179,7 @@ PRIVATE
+     ${QXLSX_HEADERPATH}
+ PUBLIC
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/header>
+-    $<INSTALL_INTERFACE:include/QXlsx>
++    $<INSTALL_INTERFACE:include/QXlsxQt${QT_VERSION_MAJOR}>
+ )
+ 
+ set_target_properties(QXlsx PROPERTIES
+-- 
+2.41.0
+
