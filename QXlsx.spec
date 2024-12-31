@@ -6,10 +6,10 @@
 # autospec commit: 5424026
 #
 Name     : QXlsx
-Version  : 1.4.10
-Release  : 4
-URL      : https://github.com/QtExcel/QXlsx/archive/v1.4.10/QXlsx-1.4.10.tar.gz
-Source0  : https://github.com/QtExcel/QXlsx/archive/v1.4.10/QXlsx-1.4.10.tar.gz
+Version  : 1.5.0
+Release  : 5
+URL      : https://github.com/QtExcel/QXlsx/archive/v1.5.0/QXlsx-1.5.0.tar.gz
+Source0  : https://github.com/QtExcel/QXlsx/archive/v1.5.0/QXlsx-1.5.0.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT MPL-2.0
@@ -54,10 +54,10 @@ license components for the QXlsx package.
 
 
 %prep
-%setup -q -n QXlsx-1.4.10
-cd %{_builddir}/QXlsx-1.4.10
+%setup -q -n QXlsx-1.5.0
+cd %{_builddir}/QXlsx-1.5.0
 pushd ..
-cp -a QXlsx-1.4.10 buildavx2
+cp -a QXlsx-1.5.0 buildavx2
 popd
 
 %build
@@ -65,7 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1735605539
+export SOURCE_DATE_EPOCH=1735662531
 pushd QXlsx
 mkdir -p clr-build
 pushd clr-build
@@ -130,7 +130,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1735605539
+export SOURCE_DATE_EPOCH=1735662531
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/QXlsx
 cp %{_builddir}/QXlsx-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/QXlsx/0fc052f0f02f09fd3d64d63ab5deed0ebcbb0ba7 || :
@@ -182,9 +182,9 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libQXlsxQt6.so.1.4.4
-/usr/lib64/libQXlsxQt6.so.0.1.4.4
-/usr/lib64/libQXlsxQt6.so.1.4.4
+/V3/usr/lib64/libQXlsxQt6.so.1.5.0
+/usr/lib64/libQXlsxQt6.so.1
+/usr/lib64/libQXlsxQt6.so.1.5.0
 
 %files license
 %defattr(0644,root,root,0755)
